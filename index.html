@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Pillu 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fff8f3;
+    --blush:#ffd9e3;
+    --pink:#ffb8cd;
+    --rose:#e8607e;
+    --deeprose:#c94566;
+    --lavender:#ead9f3;
+    --plum:#5b3a4e;
+    --gold:#f0c987;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,var(--cream) 0%, #fff 100%);
+    font-family:'Quicksand',sans-serif;
+    color:var(--plum);
+    overflow-x:hidden;
+  }
+  .display{font-family:'Fraunces',serif;}
+  .script{font-family:'Caveat',cursive;}
+
+  /* floating hearts background */
+  .floaters{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .floater{position:absolute;bottom:-10%;font-size:20px;opacity:.35;animation:rise linear infinite;}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) rotate(0deg);opacity:0;}
+    10%{opacity:.4;}
+    100%{transform:translateY(-110vh) translateX(20px) rotate(25deg);opacity:0;}
+  }
+
+  section{position:relative;z-index:1;padding:80px 20px;max-width:900px;margin:0 auto;}
+
+  /* HERO */
+  .hero{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:40px;
+  }
+  .eyebrow{
+    font-size:15px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--rose);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(48px,10vw,96px);
+    margin:0;
+    line-height:1;
+    color:var(--deeprose);
+    font-weight:600;
+  }
+  .hero .script{
+    font-size:clamp(30px,6vw,50px);
+    color:var(--rose);
+    display:block;
+    margin-top:6px;
+  }
+  .subtitle{
+    max-width:520px;
+    margin:26px auto 0;
+    font-size:18px;
+    line-height:1.6;
+    color:#7a5468;
+  }
+  .counter-card{
+    margin-top:46px;
+    background:var(--white);
+    border:1px solid var(--blush);
+    border-radius:24px;
+    padding:28px 40px;
+    box-shadow:0 20px 50px -20px rgba(200,80,120,.35);
+  }
+  .counter-number{
+    font-family:'Fraunces',serif;
+    font-size:56px;
+    color:var(--deeprose);
+    font-weight:600;
+  }
+  .counter-label{
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#a97b91;
+  }
+  .scroll-hint{
+    margin-top:56px;
+    font-size:14px;
+    color:#c48ba0;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+  h2.section-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(30px,5vw,42px);
+    text-align:center;
+    color:var(--deeprose);
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    color:#a97b91;
+    margin-bottom:44px;
+    font-size:16px;
+  }
+
+  /* LOVE NOTE */
+  .note{
+    background:var(--white);
+    border-radius:28px;
+    padding:50px clamp(24px,6vw,70px);
+    box-shadow:0 20px 60px -30px rgba(200,80,120,.3);
+    border:1px solid var(--blush);
+    position:relative;
+  }
+  .note::before{
+    content:"❝";
+    font-family:'Fraunces',serif;
+    position:absolute;
+    top:14px;left:26px;
+    font-size:60px;
+    color:var(--blush);
+  }
+  .note p{
+    font-size:19px;
+    line-height:1.9;
+    color:#6b4a5c;
+    margin:0 0 16px;
+    position:relative;
+  }
+  .note .sign{
+    text-align:right;
+    font-family:'Caveat',cursive;
+    font-size:32px;
+    color:var(--rose);
+    margin-top:10px;
+  }
+
+  /* GAME CARD SHELL */
+  .game-card{
+    background:var(--white);
+    border-radius:28px;
+    padding:clamp(24px,5vw,48px);
+    box-shadow:0 20px 60px -30px rgba(200,80,120,.3);
+    border:1px solid var(--blush);
+    margin-bottom:60px;
+  }
+  .game-tag{
+    display:inline-block;
+    background:var(--lavender);
+    color:#7c5a94;
+    padding:5px 14px;
+    border-radius:100px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .game-card h3{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    margin:0 0 8px;
+    color:var(--deeprose);
+  }
+  .game-desc{color:#a97b91;margin-bottom:26px;font-size:15px;}
+
+  button{
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+    border-radius:100px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  button:active{transform:scale(.96);}
+  .btn-primary{
+    background:var(--rose);
+    color:white;
+    padding:14px 30px;
+    font-size:15px;
+    box-shadow:0 10px 24px -10px rgba(232,96,126,.6);
+  }
+  .btn-primary:hover{box-shadow:0 14px 28px -8px rgba(232,96,126,.7);}
+  .btn-ghost{
+    background:var(--blush);
+    color:var(--deeprose);
+    padding:10px 22px;
+    font-size:14px;
+  }
+
+  /* WOULD YOU RATHER */
+  .wyr-options{display:flex;gap:18px;flex-wrap:wrap;}
+  .wyr-option{
+    flex:1 1 220px;
+    background:var(--cream);
+    border:2px solid var(--blush);
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    font-weight:600;
+    color:var(--plum);
+    font-size:16px;
+  }
+  .wyr-option:hover{border-color:var(--rose);background:var(--blush);}
+  .wyr-option.picked{background:var(--rose);border-color:var(--rose);color:white;}
+  .wyr-or{
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;font-size:26px;color:var(--rose);
+    flex:0 0 auto;padding:0 4px;
+  }
+  .wyr-progress{margin-top:18px;font-size:13px;color:#b98da0;text-align:center;}
+  .wyr-result{
+    text-align:center;font-family:'Caveat',cursive;font-size:26px;color:var(--deeprose);margin-top:18px;
+  }
+
+  /* QUIZ */
+  .quiz-q{font-weight:700;margin-bottom:16px;font-size:16px;}
+  .quiz-options{display:grid;gap:10px;}
+  .quiz-option{
+    text-align:left;
+    background:var(--cream);
+    border:2px solid var(--blush);
+    border-radius:14px;
+    padding:14px 18px;
+    font-size:15px;
+    color:var(--plum);
+    font-weight:600;
+  }
+  .quiz-option:hover{border-color:var(--rose);}
+  .quiz-option.correct{background:#dff5e3;border-color:#7cc796;color:#2e6b3e;}
+  .quiz-option.wrong{background:#ffe1e1;border-color:#e88a8a;color:#a13c3c;}
+  .quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;}
+  .quiz-score{font-family:'Fraunces',serif;font-size:22px;color:var(--deeprose);text-align:center;}
+
+  /* MEMORY MATCH */
+  .memory-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .memory-card{
+    aspect-ratio:1/1;
+    background:var(--rose);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:transparent;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .3s, background .3s, color .3s;
+    box-shadow:0 8px 18px -10px rgba(200,80,120,.5);
+  }
+  .memory-card.flipped, .memory-card.matched{
+    background:var(--cream);
+    color:var(--plum);
+    border:2px solid var(--blush);
+  }
+  .memory-card.matched{background:var(--lavender);border-color:#c9a8de;}
+  .memory-stats{display:flex;justify-content:center;gap:30px;margin-top:20px;font-size:14px;color:#a97b91;}
+  .memory-win{text-align:center;font-family:'Caveat',cursive;font-size:28px;color:var(--deeprose);margin-top:16px;}
+
+  /* COMPLIMENT GENERATOR */
+  .compliment-box{
+    background:var(--cream);
+    border:2px dashed var(--pink);
+    border-radius:20px;
+    padding:36px;
+    text-align:center;
+    font-family:'Caveat',cursive;
+    font-size:26px;
+    color:var(--deeprose);
+    min-height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  footer{
+    text-align:center;
+    padding:60px 20px 90px;
+    color:#c48ba0;
+    font-size:14px;
+  }
+  footer .script{font-size:22px;color:var(--rose);display:block;margin-bottom:8px;}
+
+  @media (max-width:600px){
+    .memory-grid{grid-template-columns:repeat(4,1fr);gap:8px;}
+    .memory-card{font-size:22px;}
+    .wyr-options{flex-direction:column;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="floaters" id="floaters"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">a little website, all for you</div>
+  <h1>Tejaswini<span class="script">my pillu 💗</span></h1>
+  <p class="subtitle">Since 18th March 2026, my favourite hobby has been loving you. Here's proof, a few silly games, and a lot of my heart.</p>
+  <div class="counter-card">
+    <div class="counter-number" id="dayCount">0</div>
+    <div class="counter-label">days of us, and counting</div>
+  </div>
+  <div class="scroll-hint">scroll down, pillu ↓</div>
+</section>
+
+<!-- LOVE NOTE -->
+<section>
+  <h2 class="section-title">A Note, Just Because</h2>
+  <p class="section-sub">no occasion, just felt like saying it</p>
+  <div class="note">
+    <p>Pillu, if I had to explain you to someone, I don't think words would be enough. You're the person who makes ordinary days feel like inside jokes, and hard days feel lighter just because you're in them.</p>
+    <p>Every single day since 18th March 2026 has quietly become one of my favourites. I made this little page because you deserve something silly and sweet, made only for you, by someone who's a little (a lot) obsessed with you.</p>
+    <div class="sign">— yours, always</div>
+  </div>
+</section>
+
+<!-- GAMES INTRO -->
+<section style="padding-bottom:0;">
+  <h2 class="section-title">Couple Games</h2>
+  <p class="section-sub">for two people who never run out of things to laugh about</p>
+</section>
+
+<!-- WOULD YOU RATHER -->
+<section style="padding-top:0;">
+  <div class="game-card">
+    <span class="game-tag">Game 1</span>
+    <h3>Would You Rather... Us Edition</h3>
+    <p class="game-desc">Pick honestly. I'll be judging your answers lovingly.</p>
+    <div id="wyrContainer"></div>
+    <div class="wyr-progress" id="wyrProgress"></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section style="padding-top:0;">
+  <div class="game-card">
+    <span class="game-tag">Game 2</span>
+    <h3>How Well Do You Know Us?</h3>
+    <p class="game-desc">A completely biased, totally official quiz.</p>
+    <div id="quizContainer"></div>
+  </div>
+</section>
+
+<!-- MEMORY MATCH -->
+<section style="padding-top:0;">
+  <div class="game-card">
+    <span class="game-tag">Game 3</span>
+    <h3>Memory Match: Us Edition</h3>
+    <p class="game-desc">Flip two cards, find the pairs. Try to beat your own record, pillu.</p>
+    <div class="memory-grid" id="memoryGrid"></div>
+    <div class="memory-stats">
+      <span>Moves: <b id="moveCount">0</b></span>
+      <span>Matches: <b id="matchCount">0</b>/8</span>
+    </div>
+    <div class="memory-win" id="memoryWin"></div>
+    <div style="text-align:center;margin-top:18px;">
+      <button class="btn-ghost" onclick="initMemory()">Restart game</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIMENT GENERATOR -->
+<section style="padding-top:0;">
+  <div class="game-card">
+    <span class="game-tag">Game 4</span>
+    <h3>Emergency Compliment Machine</h3>
+    <p class="game-desc">For whenever you need a random dose of "I love you." Press the button, pillu.</p>
+    <div class="compliment-box" id="complimentBox">tap the button for a surprise 💗</div>
+    <div style="text-align:center;margin-top:22px;">
+      <button class="btn-primary" onclick="newCompliment()">Give me a compliment</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="script">made with way too much love</span>
+  for the one and only Tejaswini, my pillu 💗
+</footer>
+
+<script>
+/* ---------- FLOATING HEARTS ---------- */
+const floaters = document.getElementById('floaters');
+const heartEmojis = ['💗','💕','💖','🩷'];
+for(let i=0;i<16;i++){
+  const el = document.createElement('div');
+  el.className='floater';
+  el.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+  el.style.left = Math.random()*100+'%';
+  el.style.animationDuration = (10+Math.random()*14)+'s';
+  el.style.animationDelay = (Math.random()*14)+'s';
+  el.style.fontSize = (14+Math.random()*16)+'px';
+  floaters.appendChild(el);
+}
+
+/* ---------- DAY COUNTER ---------- */
+function updateCounter(){
+  const start = new Date('2026-03-18T00:00:00');
+  const now = new Date();
+  const diffMs = now - start;
+  const days = Math.max(0, Math.floor(diffMs/(1000*60*60*24)));
+  document.getElementById('dayCount').textContent = days;
+}
+updateCounter();
+setInterval(updateCounter, 60000);
+
+/* ---------- WOULD YOU RATHER ---------- */
+const wyrQuestions = [
+  ["Lazy Sunday cuddles all day","Spontaneous road trip right now"],
+  ["I cook for you (badly)","You cook for me (also badly)"],
+  ["Slow dance in the kitchen","Dance battle in the living room"],
+  ["A long voice note every morning","A silly selfie every night"],
+  ["Movie night with your favourite film","Movie night with my favourite film"],
+  ["I plan the whole date","You plan the whole date"],
+  ["Cuddles when it's raining outside","Ice cream when it's sunny outside"],
+  ["Forehead kisses forever","Hand-holding forever"]
+];
+let wyrIndex = 0;
+let wyrPicks = [];
+function renderWYR(){
+  const container = document.getElementById('wyrContainer');
+  if(wyrIndex >= wyrQuestions.length){
+    container.innerHTML = `<div class="wyr-result">That's all of them! Turns out we'd choose each other every single time. 💗</div>
+      <div style="text-align:center;margin-top:16px;"><button class="btn-ghost" onclick="restartWYR()">Play again</button></div>`;
+    document.getElementById('wyrProgress').textContent = '';
+    return;
+  }
+  const [a,b] = wyrQuestions[wyrIndex];
+  container.innerHTML = `
+    <div class="wyr-options">
+      <div class="wyr-option" onclick="pickWYR(this,'${escapeHtml(a)}')">${a}</div>
+      <div class="wyr-or">or</div>
+      <div class="wyr-option" onclick="pickWYR(this,'${escapeHtml(b)}')">${b}</div>
+    </div>`;
+  document.getElementById('wyrProgress').textContent = `Question ${wyrIndex+1} of ${wyrQuestions.length}`;
+}
+function pickWYR(el, choice){
+  const opts = el.parentElement.querySelectorAll('.wyr-option');
+  opts.forEach(o=>o.classList.remove('picked'));
+  el.classList.add('picked');
+  wyrPicks.push(choice);
+  setTimeout(()=>{ wyrIndex++; renderWYR(); }, 500);
+}
+function restartWYR(){ wyrIndex=0; wyrPicks=[]; renderWYR(); }
+function escapeHtml(s){ return s.replace(/'/g,"\\'"); }
+renderWYR();
+
+/* ---------- QUIZ ---------- */
+const quizQuestions = [
+  {
+    q:"What's Tejaswini's nickname on this very website?",
+    options:["Pillu","Sunshine","Boo","Cutie"],
+    correct:0
+  },
+  {
+    q:"When did this love story officially begin?",
+    options:["1st January 2026","18th March 2026","4th July 2026","14th February 2026"],
+    correct:1
+  },
+  {
+    q:"Best cure for a bad day, according to this website?",
+    options:["A nap","Cuddles and a silly compliment","Ice cream alone","Ignoring it"],
+    correct:1
+  },
+  {
+    q:"What did this website get made entirely out of?",
+    options:["Code and coffee","Way too much love","Boredom","A dare"],
+    correct:1
+  }
+];
+let quizIndex = 0;
+let quizScore = 0;
+function renderQuiz(){
+  const container = document.getElementById('quizContainer');
+  if(quizIndex >= quizQuestions.length){
+    container.innerHTML = `<div class="quiz-score">You scored ${quizScore} / ${quizQuestions.length} 💗</div>
+      <p style="text-align:center;color:#a97b91;margin-top:10px;">(spoiler: the real answer to every question is Tejaswini)</p>
+      <div style="text-align:center;margin-top:16px;"><button class="btn-ghost" onclick="restartQuiz()">Try again</button></div>`;
+    return;
+  }
+  const q = quizQuestions[quizIndex];
+  container.innerHTML = `
+    <div class="quiz-q">${quizIndex+1}. ${q.q}</div>
+    <div class="quiz-options">
+      ${q.options.map((opt,i)=>`<button class="quiz-option" onclick="answerQuiz(this,${i},${q.correct})">${opt}</button>`).join('')}
+    </div>`;
+}
+function answerQuiz(el, chosen, correct){
+  const opts = el.parentElement.querySelectorAll('.quiz-option');
+  opts.forEach(o=>o.disabled=true);
+  if(chosen===correct){
+    el.classList.add('correct');
+    quizScore++;
+  } else {
+    el.classList.add('wrong');
+    opts[correct].classList.add('correct');
+  }
+  setTimeout(()=>{ quizIndex++; renderQuiz(); }, 900);
+}
+function restartQuiz(){ quizIndex=0; quizScore=0; renderQuiz(); }
+renderQuiz();
+
+/* ---------- MEMORY MATCH ---------- */
+const memoryEmojis = ['💗','😘','🥰','💌','🌸','☕','🎬','💍'];
+let memoryState = { cards:[], flipped:[], matched:0, moves:0, lock:false };
+
+function initMemory(){
+  const pairs = [...memoryEmojis, ...memoryEmojis];
+  for(let i=pairs.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [pairs[i],pairs[j]] = [pairs[j],pairs[i]];
+  }
+  memoryState = { cards:pairs, flipped:[], matched:0, moves:0, lock:false };
+  document.getElementById('moveCount').textContent = 0;
+  document.getElementById('matchCount').textContent = 0;
+  document.getElementById('memoryWin').textContent = '';
+  renderMemory();
+}
+
+function renderMemory(){
+  const grid = document.getElementById('memoryGrid');
+  grid.innerHTML = '';
+  memoryState.cards.forEach((emoji, idx)=>{
+    const card = document.createElement('div');
+    card.className = 'memory-card';
+    card.dataset.index = idx;
+    card.textContent = emoji;
+    card.addEventListener('click', ()=>flipCard(idx, card));
+    grid.appendChild(card);
+  });
+}
+
+function flipCard(idx, el){
+  if(memoryState.lock) return;
+  if(el.classList.contains('flipped') || el.classList.contains('matched')) return;
+  if(memoryState.flipped.length===2) return;
+
+  el.classList.add('flipped');
+  memoryState.flipped.push({idx, el});
+
+  if(memoryState.flipped.length===2){
+    memoryState.moves++;
+    document.getElementById('moveCount').textContent = memoryState.moves;
+    memoryState.lock = true;
+    const [first, second] = memoryState.flipped;
+    if(memoryState.cards[first.idx] === memoryState.cards[second.idx]){
+      first.el.classList.add('matched');
+      second.el.classList.add('matched');
+      memoryState.matched++;
+      document.getElementById('matchCount').textContent = memoryState.matched;
+      memoryState.flipped = [];
+      memoryState.lock = false;
+      if(memoryState.matched === memoryEmojis.length){
+        document.getElementById('memoryWin').textContent = `Perfect, pillu! Solved in ${memoryState.moves} moves 💗`;
+      }
+    } else {
+      setTimeout(()=>{
+        first.el.classList.remove('flipped');
+        second.el.classList.remove('flipped');
+        memoryState.flipped = [];
+        memoryState.lock = false;
+      }, 700);
+    }
+  }
+}
+initMemory();
+
+/* ---------- COMPLIMENT GENERATOR ---------- */
+const compliments = [
+  "Your laugh is my favourite sound in the entire world.",
+  "You make ordinary Tuesdays feel like a good day.",
+  "I fall for you a little more every single day.",
+  "Being your person is my favourite job.",
+  "You're the best part of every plan I make.",
+  "You're proof that some people really are just built to be loved.",
+  "My favourite place is right next to you.",
+  "You + me, since 18th March 2026, and I'd choose it again every time.",
+  "You make it so easy to be soft and so easy to be happy.",
+  "Every love song makes a little more sense because of you."
+];
+function newCompliment(){
+  const box = document.getElementById('complimentBox');
+  const random = compliments[Math.floor(Math.random()*compliments.length)];
+  box.style.opacity = 0;
+  setTimeout(()=>{
+    box.textContent = random;
+    box.style.opacity = 1;
+  }, 150);
+}
+</script>
+
+</body>
+</html>
